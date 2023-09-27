@@ -1,0 +1,16 @@
+:root{
+  --brand-primary	: #0768AC;
+  --brand-secondary : #03C180;
+  --bg_default : #FFFFFF;
+  --bg_body	: #F0F9FF;
+  --lines-color	: #DDDDDD;
+  --body-text	 : #333333;
+  --heart-color	: #DC143C;
+  --extra-light-font : 200;
+  --regular-font : 400;
+  --bold-font : 700;
+  --fixed-black: #333333;
+  --fixed-white: #FFFFFF;
+  --fixed-grey: #DDDDDD;
+
+}
