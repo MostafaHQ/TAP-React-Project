@@ -39,6 +39,9 @@ const SearchIcon = styled.span`
   color: var(--body-text);
   transform: translateY(-50%);
   pointer-events: none;
+  @media (max-width: 768px) {
+    top: 18%;
+  }
 `;
 
 const StyledSection = styled.section`
@@ -93,7 +96,7 @@ export const Home = () => {
   useEffect(() => {
     if (topics) {
       let categories = new Set();
-      
+
       topics.forEach((topic) => categories.add(topic.category));
       setFilterOptions([...categories]);
 

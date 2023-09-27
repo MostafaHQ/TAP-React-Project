@@ -19,9 +19,12 @@ function App() {
       <GlobalStyle />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<MainLayout />}>
+          <Route path="/TAP-React-Project" element={<MainLayout />}>
             <Route index element={<Home />} />
-            <Route path="details/:id" element={<Detail />} />
+            <Route
+              path="TAP-React-Project/details/:topicId"
+              element={<Detail />}
+            />
           </Route>
         </Routes>
       </BrowserRouter>

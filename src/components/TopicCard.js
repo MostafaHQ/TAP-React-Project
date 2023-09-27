@@ -62,14 +62,17 @@ const Credit = styled.p`
   text-align: center;
 `;
 
-export const TopicCard = () => {
+export const TopicCard = (props) => {
   return (
     <>
       <CardContainer>
-        <CardImage src="./images/html.png" />
+        <CardImage
+          src={`/images/${props.cardDetails.image}`}
+          alt={props.cardDetails.topic}
+        />
         <TopicProperty>
-          <Subject>HTML</Subject> by
-          <Author> Sarah Smith</Author>
+          <Subject>{props.cardDetails.topic}</Subject> by
+          <Author>{props.cardDetails.name}</Author>
         </TopicProperty>
         <FavoriteRequest>
           <p>Interested about this topic?</p>

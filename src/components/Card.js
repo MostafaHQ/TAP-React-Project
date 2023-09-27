@@ -52,17 +52,17 @@ export const Card = (props) => {
   return (
     <>
       {props.details.map((value) => (
-        <StyledLink to={"/details/${value.id}"} key={value.id}>
+        <StyledLink to={`/details/${value.id}`} key={value.id}>
           <StyledCard>
             <CardInfoContainer>
-              <Image src={value.image} alt={value.topic} />
+              <Image src={`/images/${value.image}`} alt={value.topic} />
               <Category>{value.category}</Category>
               <Topic>{value.topic}</Topic>
               <AuthorName>Author: {value.name}</AuthorName>
             </CardInfoContainer>
           </StyledCard>
         </StyledLink>
-      ))}  
+      ))}
     </>
   );
 };

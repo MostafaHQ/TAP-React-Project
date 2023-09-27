@@ -1,5 +1,8 @@
 import styled from "styled-components";
 import { TopicCard } from "../components/TopicCard";
+import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { loadDetails } from "../shared/Api";
 
 const BlackContainer = styled.div`
   background-color: var(--fixed-black);
@@ -17,7 +20,7 @@ const TopicDetails = styled.div`
   justify-content: space-between;
   align-items: center;
   @media (max-width: 1300px) {
-    flex-direction: column;    
+    flex-direction: column;
   }
 `;
 
@@ -74,6 +77,18 @@ const FullWidth = styled.div`
 `;
 
 export const Detail = () => {
+  const { topicId } = useParams();
+  const [topicDetails, setTopicDetails] = useState([]);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    setLoading(true);
+    loadDetails(topicId).then((data) => {
+      setTopicDetails(data);
+      
+    });
+  }, []);
+
   return (
     <>
       <BlackContainer>
@@ -81,21 +96,15 @@ export const Detail = () => {
           <TopicDetails>
             <FullWidth>
               <TopicDesc>
-                <CategoryName>Web Development Languages</CategoryName>
-                <TopicName>HTML</TopicName>
+                <CategoryName>{topicDetails.category}</CategoryName>
+                <TopicName>{topicDetails.topic}</TopicName>
                 <LanguageDefinition>
-                  HTML (Hypertext Markup Language) is the standard markup
-                  language for creating web pages and other information that can
-                  be displayed in a web browser. It provides a structure for
-                  content and defines how it should be displayed on a web page,
-                  including text, images, and multimedia. HTML is essential for
-                  creating static web pages and is a foundational technology for
-                  the World Wide Web.
+                  {topicDetails.description}
                 </LanguageDefinition>
               </TopicDesc>
             </FullWidth>
             <FullWidth>
-              <TopicCard />
+              <TopicCard cardDetails={topicDetails} />
             </FullWidth>
           </TopicDetails>
         </InnerContainer>
@@ -104,11 +113,9 @@ export const Detail = () => {
         <FullWidth>
           <TopicContainer>
             <CourseTopic>
-              <h3>HTML Sub Topics</h3>
+              <h3>{topicDetails.topic} Sub Topics</h3>
               <ul>
-                <SubTopics>HTML syntax and structure</SubTopics>
-                <SubTopics>HTML elements and attributes</SubTopics>
-                <SubTopics>HTML forms and input elements</SubTopics>
+                {topicDetails.subtopics}
               </ul>
             </CourseTopic>
           </TopicContainer>

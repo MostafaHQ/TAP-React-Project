@@ -12,3 +12,9 @@ export const loadTopics = (searchBy) => {
     .get(`${BACKEND_HOST}topics/list?` + params)
     .then((res) => res.data);
 };
+
+export const loadDetails = (topicId) => {
+  return axios
+    .get(`${BACKEND_HOST}topics/details/${topicId}`)
+    .then((res) => res.data);
+};
