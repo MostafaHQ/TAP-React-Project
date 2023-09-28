@@ -13,7 +13,7 @@ export const Dropdown = ({ options, value, label, onChange }) => {
   return (
     <StyledDropList>
       <label>{label}</label>
-      <select>
+      <select onChange={onChange}>
         {options?.map(({ title, value }, index) => (
           <option value={value ?? title} key={index}>
             {title}

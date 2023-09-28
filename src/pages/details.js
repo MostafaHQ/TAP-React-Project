@@ -85,9 +85,8 @@ export const Detail = () => {
     setLoading(true);
     loadDetails(topicId).then((data) => {
       setTopicDetails(data);
-      
     });
-  }, []);
+  }, [topicId]);
 
   return (
     <>
@@ -115,7 +114,9 @@ export const Detail = () => {
             <CourseTopic>
               <h3>{topicDetails.topic} Sub Topics</h3>
               <ul>
-                {topicDetails.subtopics}
+                {topicDetails?.subtopics?.map((subtopic, index) => (
+                  <li key={index}>{subtopic}</li>
+                ))}
               </ul>
             </CourseTopic>
           </TopicContainer>

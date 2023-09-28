@@ -63,13 +63,18 @@ const Credit = styled.p`
 `;
 
 export const TopicCard = (props) => {
+  let imagePath = "";
+
+  // Check if props and props.cardDetails are defined
+  if (props && props.cardDetails && props.cardDetails.image) {
+    // Assuming `props.cardDetails.image` contains a valid image filename
+    // Make sure the path to the image file is correct relative to this component
+    imagePath = require(`../../public/images/${props.cardDetails.image}`);
+  }
   return (
     <>
       <CardContainer>
-        <CardImage
-          src={`/images/${props.cardDetails.image}`}
-          alt={props.cardDetails.topic}
-        />
+        <CardImage src={imagePath} alt={props.cardDetails.topic} />
         <TopicProperty>
           <Subject>{props.cardDetails.topic}</Subject> by
           <Author>{props.cardDetails.name}</Author>
