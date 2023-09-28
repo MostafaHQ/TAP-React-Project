@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/TAP-React-Project/static/css/main.f0efd88b.css",
-    "main.js": "/TAP-React-Project/static/js/main.e1939d3e.js",
+    "main.css": "/TAP-React-Project/static/css/main.a68071ae.css",
+    "main.js": "/TAP-React-Project/static/js/main.1b65524b.js",
     "static/js/787.3bf0dcc2.chunk.js": "/TAP-React-Project/static/js/787.3bf0dcc2.chunk.js",
     "static/media/home_dark.jpeg": "/TAP-React-Project/static/media/home_dark.a6bcf08f011cf9a3ddbb.jpeg",
     "static/media/home.jpeg": "/TAP-React-Project/static/media/home.ee1f1278d01cdd201fcb.jpeg",
@@ -47,12 +47,12 @@
     "static/media/expressjs.webp": "/TAP-React-Project/static/media/expressjs.2ae1dc58f7c5318ca228.webp",
     "static/media/react.webp": "/TAP-React-Project/static/media/react.55afe679a76823cdda39.webp",
     "index.html": "/TAP-React-Project/index.html",
-    "main.f0efd88b.css.map": "/TAP-React-Project/static/css/main.f0efd88b.css.map",
-    "main.e1939d3e.js.map": "/TAP-React-Project/static/js/main.e1939d3e.js.map",
+    "main.a68071ae.css.map": "/TAP-React-Project/static/css/main.a68071ae.css.map",
+    "main.1b65524b.js.map": "/TAP-React-Project/static/js/main.1b65524b.js.map",
     "787.3bf0dcc2.chunk.js.map": "/TAP-React-Project/static/js/787.3bf0dcc2.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f0efd88b.css",
-    "static/js/main.e1939d3e.js"
+    "static/css/main.a68071ae.css",
+    "static/js/main.1b65524b.js"
   ]
 }
