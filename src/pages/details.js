@@ -50,7 +50,16 @@ const TopicContainer = styled.div`
   margin-top: 20px;
 `;
 
-const SupTopicTitle = styled.h3``;
+const SubTopicTitle = styled.h3`
+  padding: 12px;
+  font-size: 22px;
+`;
+
+const subTopicList = styled.li`
+  list-style-type: none;
+  border-top: 1px solid var(--lines-color);
+  padding: 10px;
+`;
 
 const CourseTopic = styled.div`
   width: 60%;
@@ -68,6 +77,10 @@ const SubTopics = styled.li`
   list-style-type: none;
   border-top: 1px solid var(--lines-color);
   padding: 10px;
+`;
+
+const CheckIcon = styled.span`
+  color: var(--brand-secondary);
 `;
 
 const FullWidth = styled.div`
@@ -112,10 +125,15 @@ export const Detail = () => {
         <FullWidth>
           <TopicContainer>
             <CourseTopic>
-              <h3>{topicDetails.topic} Sub Topics</h3>
+              <SubTopicTitle>{topicDetails.topic} Sub Topics</SubTopicTitle>
               <ul>
                 {topicDetails?.subtopics?.map((subtopic, index) => (
-                  <li key={index}>{subtopic}</li>
+                  <SubTopics key={index}>
+                    <CheckIcon>
+                      <ion-icon name="checkmark-circle-outline"></ion-icon>
+                    </CheckIcon>
+                    {subtopic}
+                  </SubTopics>
                 ))}
               </ul>
             </CourseTopic>

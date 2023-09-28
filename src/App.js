@@ -4,19 +4,11 @@ import { MainLayout } from "./layout/MainLayout";
 import { Home } from "./pages/home";
 import { createGlobalStyle } from "styled-components";
 import { Detail } from "./pages/details";
-
-const GlobalStyle = createGlobalStyle`
-*{
-  padding: 0;
-  margin: 0;
-  font-family: Nunito Sans;
-}
-`;
+import { ThemeContextProvider } from "./context/ThemeContext";
 
 function App() {
   return (
-    <>
-      <GlobalStyle />
+    <ThemeContextProvider>
       <BrowserRouter>
         <Routes>
           <Route path="/TAP-React-Project" element={<MainLayout />}>
@@ -28,7 +20,7 @@ function App() {
           </Route>
         </Routes>
       </BrowserRouter>
-    </>
+    </ThemeContextProvider>
   );
 }
 

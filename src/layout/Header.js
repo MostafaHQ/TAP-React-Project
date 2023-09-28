@@ -3,6 +3,7 @@ import { Button } from "../components/Button";
 import { DecorativeShape } from "../components/DecorativeShape";
 import styled from "styled-components";
 import { Container } from "../components/Container";
+import { useThemeContext } from "../context/ThemeContext";
 
 const StyledContainer = styled.div`
   display: flex;
@@ -42,13 +43,18 @@ const WlecomingHeader = styled.h4`
 `;
 
 export const Header = () => {
+  const { theme, toggleTheme } = useThemeContext();
   return (
     <>
       <Container>
         <StyledContainer>
           <StyledTitle>Web Topics</StyledTitle>
           <IconsContainer>
-            <Button text="Dark Mode" iconName="moon-outline" />
+            <Button
+              text={theme === "light" ? "Dark Mode" : "Light Mode"}
+              iconName={theme === "light" ? "moon-outline" : "sunny-outline"}
+              onClick={toggleTheme}
+            />
             <Button text="Favorite" iconName="heart-outline" />
           </IconsContainer>
         </StyledContainer>

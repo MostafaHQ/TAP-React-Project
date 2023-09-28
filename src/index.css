@@ -1,10 +1,19 @@
+*{
+  padding: 0;
+  margin: 0;
+  font-family: Nunito Sans;
+}
 :root{
-  --brand-primary	: #0768AC;
+  --brand-primary	: #0768AC; 
   --brand-secondary : #03C180;
   --bg_default : #FFFFFF;
+  --dark-bg_default: #1A1A1A;
   --bg_body	: #F0F9FF;
+  --dark-bg_body :#282828;
   --lines-color	: #DDDDDD;
+  --dark-line-color : #000000;
   --body-text	 : #333333;
+  --dark-body-text: #EDEDED;
   --heart-color	: #DC143C;
   --extra-light-font : 200;
   --regular-font : 400;
@@ -12,5 +21,4 @@
   --fixed-black: #333333;
   --fixed-white: #FFFFFF;
   --fixed-grey: #DDDDDD;
-
 }
